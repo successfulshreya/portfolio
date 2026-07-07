@@ -22,16 +22,7 @@ body {
     line-height: 1.6;
 }
 
-.admin-panel {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    padding: 20px; 
-    background: var(--card-bg);
-    border-radius: 12px;
-    border: 1px dashed var(--primary-color);
-}
-
-/* --- NAVIGATION --- */
+/* --- NAVIGATION & CONTAINER STRUCTURE --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -50,6 +41,12 @@ body {
 }
 .logo span { color: var(--primary-color); }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -65,6 +62,34 @@ body {
 
 .nav-links li a:hover {
     color: var(--primary-color);
+}
+
+.admin-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* --- ADMIN PANEL --- */
+.admin-panel {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 25px; 
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px dashed var(--primary-color);
+}
+.admin-panel form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px;
+}
+.admin-panel input, .admin-panel textarea {
+    padding: 12px; 
+    background: #0f172a; 
+    border: 1px solid #334155; 
+    color: white; 
+    border-radius: 8px;
+    width: 100%;
 }
 
 /* --- HERO SECTION --- */
@@ -172,13 +197,17 @@ h2::after {
     border: 1px solid #334155;
 }
 
-/* --- PROJECTS SECTION (UI FIXES) --- */
+/* --- PROJECTS SECTION --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 30px;
-    align-items: stretch; /* Cards ki height ek barabar rakhega */
+    align-items: stretch;
+}
+
+.static-grid {
+    margin-top: 30px;
 }
 
 .project-card {
@@ -188,7 +217,7 @@ h2::after {
     border: 1px solid #334155;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Content aur tech tags me space manage karega */
+    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -209,13 +238,12 @@ h2::after {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 20px;
-    flex-grow: 1; /* Description space acche se maintain karega */
+    flex-grow: 1;
 }
 
-/* Tech layout structure fixes for both dynamic and static cards */
 .project-tech {
     display: flex;
-    flex-wrap: wrap; /* Tags extra hone par tight nahi honge, next line me chale jayenge */
+    flex-wrap: wrap;
     gap: 8px;
     margin-top: auto;
 }
@@ -231,7 +259,43 @@ h2::after {
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
+/* --- CONNECT SECTION --- */
+.connect-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #0f172a;
+}
+.connect-section h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.social-icon {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+.social-icon i {
+    font-size: 1.8rem;
+}
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
 /* --- CONTACT SECTION --- */
+.contact-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
@@ -239,7 +303,6 @@ h2::after {
     flex-direction: column;
     gap: 15px;
 }
-
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 12px 20px;
@@ -250,7 +313,69 @@ h2::after {
     outline: none;
     font-size: 1rem;
 }
-
 .contact-form input:focus, .contact-form textarea:focus {
     border-color: var(--primary-color);
+}
+
+
+/* --- 📱 RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    section {
+        padding: 60px 8%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 5%;
+        text-align: center;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .nav-links li a {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 }
