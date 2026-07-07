@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Sahu | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Shreya<span>.Sahu</span></div>
+        <nav style="display: flex; align-items: center; gap: 20px;">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- YEH BUTTON MISSED THA - ISSE LOGIN POPUP AAYEGA -->
+            <button id="loginBtn" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Admin Login</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I am <span class="highlight">Shreya Sahu</span></h1>
+            <p class="subtitle">Web Developer & Software Engineer</p>
+            <p class="description">I enjoy creating innovative, clean, and user-friendly web solutions while constantly learning new technologies.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="img/image.png" alt="Shreya Sahu" class="profile-pic">
+            <div class="about-text">
+                <p>Hello! I am a passionate developer with core experience in building responsive web applications. I love solving problems through clean code.</p>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Spring boot</span>
+                    <span class="skill-tag">Mysql</span>
+                    <span class="skill-tag">git & github</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Japanese N5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+   <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+        
+        <!-- Admin Panel: Yeh login ke baad hi dikhega -->
+        <div id="adminPanelContainer" style="display: none; margin-bottom: 40px; background: #1e293b; padding: 25px; border-radius: 12px; border: 1px dashed #3b82f6;">
+            <h3 style="margin-bottom: 15px; color: #3b82f6;">Admin Panel: Add New Project</h3>
+            <form id="projectForm" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" id="projectTitle" placeholder="Project Title" required style="padding: 12px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 8px;">
+                <textarea id="projectDescription" placeholder="Project Description" rows="3" required style="padding: 12px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 8px;"></textarea>
+                <input type="text" id="projectTech" placeholder="Tech Stack (e.g. Java, Spring Boot)" required style="padding: 12px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 8px;">
+                <button type="submit" class="btn">Save & Publish Project</button>
+            </form>
+        </div>
+
+        <!-- Firebase se aane wale dynamic projects yahan show honge -->
+        <div class="projects-grid" id="projectsContainer"></div>
+
+        <!-- Purane wale static projects default rahenge -->
+        <div class="projects-grid" style="margin-top: 30px;">
+            <div class="project-card">
+                <h3>PERSONAL WEBSITE</h3>
+                <p>A professional portfolio built using modern HTML5, CSS3, and JavaScript features to showcase my live projects.</p>
+                <div class="project-tech"><span>HTML</span> <span>CSS</span> <span>JS</span></div>
+            </div>
+            <div class="project-card">
+                <h3>TO-DO LIST APP</h3>
+                <p>A smart productivity application built to manage daily tasks seamlessly with dynamic updates.</p>
+                <div class="project-tech"><span>JAVA</span> <span>SPRINGBOOT</span></div>
+            </div>
+        </div>
+    </section>
+# 1. Saare naye badlavo ko stage karein
+git add .
+
+# 2. Ek badhiya sa message commit karein
+git commit -m "Added dynamic projects and fixed UI dashboard"
+
+# 3. Apne code ko GitHub par live bhejein
+git push origin main
+   
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p style="display: flex; justify-content: center; margin-bottom: 20px;">Have a project in mind or just want to say hi? Drop a message!</p>
+        <form class="contact-form" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+
+    <!-- Firebase Libraries (Direct Scripts) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Aapki Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
